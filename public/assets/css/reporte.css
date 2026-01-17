@@ -1,0 +1,141 @@
+.filter-box {
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+    min-height: 100px;
+}
+
+.filter-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #495057;
+    border-bottom: 2px solid #0d6efd;
+    padding-bottom: 5px;
+}
+
+.btn-filter {
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    border: 1px solid #dee2e6;
+    background: white;
+    color: #495057;
+    transition: all 0.2s;
+}
+
+.btn-filter:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.btn-filter.active {
+    background-color: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+    box-shadow: 0 2px 4px rgba(13, 110, 253, 0.3);
+}
+
+.clear-filter {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.clear-filter:hover {
+    color: #dc3545;
+}
+
+#tbl-resumen-calidad thead th {
+    background-color: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    vertical-align: middle;
+}
+
+/* Tabs Styles */
+.nav-tabs .nav-link {
+    color: #6c757d;
+    background-color: #f8f9fa;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: #e9ecef;
+    color: #0d6efd;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #0d6efd !important;
+    color: white !important;
+}
+
+.tab-content {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.table th {
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.bg-light-blue {
+    background-color: #f0f7ff !important;
+}
+
+.centro-group:hover,
+.variedad-group:hover {
+    background-color: #f0f7ff !important;
+}
+
+.exp-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+.calidad-row td {
+    font-size: 0.9rem;
+}
+
+#tbl-resumen-calidad tfoot {
+    background-color: #f1f5f9;
+    border-top: 2px solid #0d6efd;
+}
+
+/* Custom scrollbar for filter boxes */
+.filter-buttons {
+    max-height: 80px;
+    overflow-y: auto;
+}
+
+.filter-buttons::-webkit-scrollbar {
+    width: 4px;
+}
+
+.filter-buttons::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.filter-buttons::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.filter-buttons::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}

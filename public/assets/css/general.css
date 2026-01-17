@@ -1,0 +1,109 @@
+.center {
+  text-align: center;
+}
+
+/* Select2 Dropdown completo */
+.select2-container {
+  z-index: 9999;
+}
+
+.select2-dropdown {
+  z-index: 99999 !important;
+}
+
+/* Evitar que contenedores corten el dropdown */
+.main-content-container {
+  overflow: visible !important;
+}
+
+.card-body {
+  overflow: visible !important;
+}
+
+/* Estilos personalizados para Select2 */
+.select2-container .select2-selection--single {
+  height: 55px !important;
+  padding-left: 48px !important;
+  padding-right: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  border-radius: 8px !important;
+  border: 1px solid #dcdfe6 !important;
+  font-size: 14px !important;
+  font-family: inherit !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: normal !important;
+  padding: 0 !important;
+  color: #212529 !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 55px !important;
+}
+
+/* === MODAL DE CARGANDO === */
+#WindowLoad {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  z-index: 99999 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow: hidden !important;
+}
+
+/*  #WindowLoad .msjcargando {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  #WindowLoad .texto {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 10px 20px;
+  }*/
+#WindowLoad .msjcargando {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  /* Aumentar peso */
+  text-align: center;
+  margin-top: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 0 15px rgba(255, 255, 255, 0.4);
+  /* Sombra mejorada */
+  letter-spacing: 0.5px;
+  /* Mejor legibilidad */
+}
+
+#WindowLoad .texto {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 10px 20px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  /* Agregar sombra también al texto */
+}
+
+#WindowLoad img {
+  display: block;
+  margin: 0 auto;
+  max-width: 200px;
+  height: auto;
+}
+
+#focusInput {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
