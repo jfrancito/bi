@@ -4,6 +4,13 @@
 	window.onload = function () {
 	};
 
+	// ✅ SOLUCIÓN: Evitar que el modal de carga se quede pegado al dar "Atrás" en el navegador
+	window.addEventListener('pageshow', function (event) {
+		if (event.persisted || (typeof window.performance != "undefined" && window.performance.navigation.type === 2)) {
+			cerrarcargando();
+		}
+	});
+
 	/************************ modal cargando ************************/
 	$('.opcmenu').on('click', function (e) {
 		abrircargando('Cargando Opcion...');

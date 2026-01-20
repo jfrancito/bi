@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
         //
         Schema::defaultStringLength(191);
         View::share('carpeta', '/bi');
-        View::share('version', '22.10.27');
+        View::share('version', '22.10.62');
         View::share('vapp', '2025.09.03.21');
         Blade::componentNamespace('App\\View\\Components\\Form', 'form');
     }

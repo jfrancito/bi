@@ -100,6 +100,15 @@
                 </li>
             </ul>
 
+            <div class="row mb-3">
+                <div class="col-12 text-end">
+                    <div class="export-hint">
+                        <i class="material-symbols-outlined fs-6 me-1">info</i>
+                        💡 Haga doble clic en las filas o celdas para descargar el detalle en Excel.
+                    </div>
+                </div>
+            </div>
+
             <div class="tab-content" id="reportTabsContent">
                 <!-- Tab 1: Resumen General -->
                 <div class="tab-pane fade show active" id="general-content" role="tabpanel">
@@ -109,15 +118,15 @@
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h5 class="text-secondary fw-bold mb-0">Acopio por Centro, Variedad y Calidad</h5>
                                 <button id="btn-export-summary" class="btn btn-success btn-sm shadow-sm">
-                                    <i class="material-symbols-outlined align-middle fs-6">download</i> Exportar
+                                    <i class="material-symbols-outlined align-middle fs-6">download</i> EXPORTAR
                                 </button>
                             </div>
-                            <div class="table-responsive">
+                            <div class="table-responsive table-container-horizontal">
                                 <table id="tbl-resumen-calidad" class="table table-bordered table-hover align-middle">
-                                    <thead class="bg-light">
+                                    <thead>
                                         <tr>
-                                            <th>CENTRO</th>
-                                            <th>VARIEDAD</th>
+                                            <th class="sticky-col-1 border-end-dark">CENTRO</th>
+                                            <th class="sticky-col-2 border-end-dark">VARIEDAD</th>
                                             <th>CALIDAD</th>
                                             <th class="text-end">T Peso H</th>
                                             <th class="text-end">P Unt H</th>
@@ -127,9 +136,11 @@
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
-                                    <tfoot class="bg-light fw-bold">
+                                    <tfoot>
                                         <tr>
-                                            <td colspan="3">Total general</td>
+                                            <td class="sticky-col-1 border-end-dark">TOTAL</td>
+                                            <td class="sticky-col-2 border-end-dark">GENERAL</td>
+                                            <td></td>
                                             <td class="text-end" id="total-peso-h">0.00</td>
                                             <td class="text-end" id="total-p-unt-h">0.00</td>
                                             <td class="text-end" id="total-peso-s">0.00</td>
@@ -146,12 +157,12 @@
                             <div class="d-flex justify-content-between align-items-center mb-3 mt-2">
                                 <h5 class="text-secondary fw-bold mb-0">Consolidado por Calidad</h5>
                                 <button id="btn-export-summary-calidad" class="btn btn-success btn-sm shadow-sm">
-                                    <i class="material-symbols-outlined align-middle fs-6">download</i> Exportar
+                                    <i class="material-symbols-outlined align-middle fs-6">download</i> EXPORTAR
                                 </button>
                             </div>
-                            <div class="table-responsive">
+                            <div class="table-responsive table-container-horizontal">
                                 <table id="tbl-resumen-solo-calidad" class="table table-bordered table-hover align-middle">
-                                    <thead class="bg-light">
+                                    <thead>
                                         <tr>
                                             <th colspan="3">CALIDAD</th>
                                             <th class="text-end">T Peso H</th>
@@ -162,7 +173,7 @@
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
-                                    <tfoot class="bg-light fw-bold">
+                                    <tfoot>
                                         <tr>
                                             <td colspan="3">Total general</td>
                                             <td class="text-end" id="total-q-peso-h">0.00</td>
@@ -183,17 +194,17 @@
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h5 class="text-secondary fw-bold mb-0">Comparativo Mensual: Peso y Precio por Centro</h5>
                         <button id="btn-export-monthly" class="btn btn-success btn-sm shadow-sm">
-                            <i class="material-symbols-outlined align-middle fs-6">download</i> Exportar
+                            <i class="material-symbols-outlined align-middle fs-6">download</i> EXPORTAR
                         </button>
                     </div>
 
                     <div class="filter-box p-3 border rounded mb-3 bg-light-subtle shadow-sm">
                         <div class="d-flex justify-content-between align-items-center mb-2">
-                            <h6 class="fs-13 fw-semibold mb-0">Visibilidad de Meses:</h6>
+                            <h6 class="fs-13 fw-semibold mb-0 text-primary uppercase">Visibilidad de Meses:</h6>
                             <div class="btn-group btn-group-sm">
-                                <button type="button" class="btn btn-outline-secondary py-0 px-2 fs-11"
-                                    id="btn-month-all">Ver Todos</button>
-                                <button type="button" class="btn btn-outline-secondary py-0 px-2 fs-11"
+                                <button type="button" class="btn btn-outline-primary py-0 px-2 fs-11" id="btn-month-all">Ver
+                                    Todos</button>
+                                <button type="button" class="btn btn-outline-primary py-0 px-2 fs-11"
                                     id="btn-month-none">Ocultar Todos</button>
                             </div>
                         </div>
@@ -202,20 +213,23 @@
                                 <div class="form-check form-check-inline mx-0">
                                     <input class="form-check-input chk-month-toggle" type="checkbox"
                                         id="chk-m-{{ $m->mes_numero_compra }}" value="{{ $m->mes_numero_compra }}" checked>
-                                    <label class="form-check-label fs-12"
+                                    <label class="form-check-label fs-12 fw-bold"
                                         for="chk-m-{{ $m->mes_numero_compra }}">{{ $m->mes_compra }}</label>
                                 </div>
                             @endforeach
                         </div>
                     </div>
 
-                    <div class="table-responsive">
+                    <div class="table-responsive table-container-horizontal">
                         <table id="tbl-resumen-mensual" class="table table-bordered table-sm align-middle mb-0">
-                            <thead class="bg-light text-center">
+                            <thead>
                                 <tr id="monthly-header-months">
-                                    <th rowspan="2" class="align-middle">CENTRO</th>
+                                    <th rowspan="2" class="sticky-col-1 border-end-dark align-middle">CENTRO</th>
                                     @foreach($meses as $m)
-                                        <th colspan="2" class="col-month-{{ $m->mes_numero_compra }}">{{ $m->mes_compra }}</th>
+                                        <th colspan="2"
+                                            class="col-month-{{ $m->mes_numero_compra }} border-start border-white-50">
+                                            {{ $m->mes_compra }}
+                                        </th>
                                     @endforeach
                                     <th colspan="2">TOTAL ANUAL</th>
                                 </tr>
@@ -231,9 +245,7 @@
                                 </tr>
                             </thead>
                             <tbody></tbody>
-                            <tfoot class="bg-light fw-bold text-end">
-                                <tr id="monthly-footer"></tr>
-                            </tfoot>
+                            <tfoot id="monthly-footer"></tfoot>
                         </table>
                     </div>
                 </div>
@@ -243,17 +255,17 @@
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h5 class="text-secondary fw-bold mb-0">Precio Unitario Húmedo Mensual por Calidad</h5>
                         <button id="btn-export-price-quality" class="btn btn-success btn-sm shadow-sm">
-                            <i class="material-symbols-outlined align-middle fs-6">download</i> Exportar
+                            <i class="material-symbols-outlined align-middle fs-6">download</i> EXPORTAR
                         </button>
                     </div>
 
                     <div class="filter-box p-3 border rounded mb-3 bg-light-subtle shadow-sm">
                         <div class="d-flex justify-content-between align-items-center mb-2">
-                            <h6 class="fs-13 fw-semibold mb-0">Visibilidad de Meses:</h6>
+                            <h6 class="fs-13 fw-semibold mb-0 text-primary">Visibilidad de Meses:</h6>
                             <div class="btn-group btn-group-sm">
-                                <button type="button" class="btn btn-outline-secondary py-0 px-2 fs-11"
+                                <button type="button" class="btn btn-outline-primary py-0 px-2 fs-11"
                                     id="btn-pq-month-all">Ver Todos</button>
-                                <button type="button" class="btn btn-outline-secondary py-0 px-2 fs-11"
+                                <button type="button" class="btn btn-outline-primary py-0 px-2 fs-11"
                                     id="btn-pq-month-none">Ocultar Todos</button>
                             </div>
                         </div>
@@ -262,29 +274,29 @@
                                 <div class="form-check form-check-inline mx-0">
                                     <input class="form-check-input chk-pq-month-toggle" type="checkbox"
                                         id="chk-pq-m-{{ $m->mes_numero_compra }}" value="{{ $m->mes_numero_compra }}" checked>
-                                    <label class="form-check-label fs-12"
+                                    <label class="form-check-label fs-12 fw-bold"
                                         for="chk-pq-m-{{ $m->mes_numero_compra }}">{{ $m->mes_compra }}</label>
                                 </div>
                             @endforeach
                         </div>
                     </div>
 
-                    <div class="table-responsive">
+                    <div class="table-responsive table-container-horizontal">
                         <table id="tbl-resumen-precios-calidad" class="table table-bordered table-sm align-middle mb-0">
-                            <thead class="bg-light text-center">
+                            <thead>
                                 <tr>
-                                    <th class="align-middle">CALIDAD</th>
+                                    <th class="sticky-col-1 border-end-dark align-middle">CALIDAD</th>
                                     @foreach($meses as $m)
-                                        <th class="col-pq-month-{{ $m->mes_numero_compra }} fs-11" style="min-width: 80px;">
-                                            {{ $m->mes_compra }}</th>
+                                        <th class="col-pq-month-{{ $m->mes_numero_compra }} fs-11 text-center"
+                                            style="min-width: 80px;">
+                                            {{ $m->mes_compra }}
+                                        </th>
                                     @endforeach
-                                    <th class="fs-11" style="min-width: 80px;">PROM. ANUAL</th>
+                                    <th class="fs-11 text-center" style="min-width: 80px;">PROM. ANUAL</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
-                            <tfoot class="bg-light fw-bold text-end">
-                                <tr id="price-quality-footer"></tr>
-                            </tfoot>
+                            <tfoot id="price-quality-footer"></tfoot>
                         </table>
                     </div>
                 </div>

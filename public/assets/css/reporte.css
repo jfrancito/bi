@@ -1,141 +1,278 @@
+/* 
+   EXECUTIVE SOFT DESIGN SYSTEM 
+   Focused on readability, subtle contrasts and professional aesthetics for management.
+*/
+
+:root {
+    --executive-bg: #f8fafc;
+    --executive-primary: #334155;
+    /* Slate 700 - Professional & Soft */
+    --executive-accent: #3b82f6;
+    /* Soft Blue for highlights */
+    --executive-header-bg: #f1f5f9;
+    /* Very Light Slate */
+    --executive-header-text: #1e293b;
+    --executive-footer-bg: #1e293b;
+    /* Deep Slate */
+    --executive-border: #e2e8f0;
+    --executive-text-main: #334155;
+    --executive-text-muted: #64748b;
+}
+
+/* 1. Global Table Refinement */
+.table {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+    color: var(--executive-text-main) !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+}
+
+/* 2. UNIVERSAL HEADER - Soft Executive Style */
+#tbl-resumen-calidad thead th,
+#tbl-resumen-solo-calidad thead th,
+#tbl-resumen-mensual thead th,
+#tbl-resumen-precios-calidad thead th,
+#tbl-pu-humedo thead th,
+#tbl-precio-zona thead th,
+#tbl-comparativo-precios thead th,
+#tbl-analisis-pesos thead th,
+#tbl-analisis-precios thead th,
+.table thead th {
+    background-color: var(--executive-header-bg) !important;
+    color: var(--executive-header-text) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    font-size: 10px !important;
+    letter-spacing: 0.05em !important;
+    padding: 14px 10px !important;
+    border-top: 1px solid var(--executive-border) !important;
+    border-bottom: 2px solid var(--executive-primary) !important;
+    border-left: none !important;
+    border-right: none !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+/* 3. UNIVERSAL FOOTER/TOTALS - Softened */
+#tbl-resumen-calidad tfoot td,
+#tbl-resumen-solo-calidad tfoot td,
+#tbl-resumen-mensual tfoot td,
+#tbl-resumen-precios-calidad tfoot td,
+#tbl-pu-humedo tfoot td,
+#tbl-precio-zona tfoot td,
+#tbl-comparativo-precios tfoot td,
+#tbl-analisis-pesos tfoot td,
+#tbl-analisis-precios tfoot td,
+.table tfoot td {
+    background-color: var(--executive-footer-bg) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    padding: 12px 10px !important;
+    border: none !important;
+}
+
+/* 4. BODY & ROWS - Subtle & Clean */
+.table tbody td {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid var(--executive-border) !important;
+    padding: 12px 10px !important;
+    font-size: 12px !important;
+    color: var(--executive-text-main) !important;
+    vertical-align: middle !important;
+}
+
+/* 5. CATEGORY GROUPS - The "Suave" distinction */
+.centro-group,
+.year-group,
+.zona-group,
+.variedad-group,
+.group-header {
+    background-color: #f8fafc !important;
+}
+
+.centro-group td,
+.zona-group td {
+    font-weight: 700 !important;
+    color: var(--executive-primary) !important;
+    border-top: 1px solid var(--executive-border) !important;
+    border-bottom: 1px solid var(--executive-border) !important;
+}
+
+.variedad-group td {
+    font-weight: 600 !important;
+    color: var(--executive-text-muted) !important;
+    background-color: #fafafa !important;
+}
+
+/* 6. METRIC HIGHLIGHTS - Subtle blue accent */
+.text-primary-value {
+    color: var(--executive-accent) !important;
+    font-weight: 600 !important;
+}
+
+.bg-metric-h {
+    background-color: rgba(59, 130, 246, 0.03) !important;
+}
+
+.bg-metric-s {
+    background-color: rgba(16, 185, 129, 0.03) !important;
+}
+
+/* 7. FILTERS - Minimalist & Elegant */
 .filter-box {
-    background-color: #f8f9fa;
-    transition: all 0.3s ease;
-    min-height: 100px;
+    border: 1px solid var(--executive-border) !important;
+    background: #ffffff !important;
+    padding: 15px !important;
+    border-radius: 6px !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
 }
 
 .filter-title {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #495057;
-    border-bottom: 2px solid #0d6efd;
-    padding-bottom: 5px;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: var(--executive-text-muted) !important;
+    text-transform: uppercase !important;
+    border-bottom: 1px solid var(--executive-border) !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 12px !important;
 }
 
 .btn-filter {
-    border-radius: 4px;
-    padding: 2px 8px;
-    font-size: 0.75rem;
-    border: 1px solid #dee2e6;
-    background: white;
-    color: #495057;
-    transition: all 0.2s;
+    border: 1px solid var(--executive-border) !important;
+    color: var(--executive-text-muted) !important;
+    background: white !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
 }
 
 .btn-filter:hover {
-    background-color: #e9ecef;
-    border-color: #adb5bd;
+    border-color: var(--executive-accent) !important;
+    color: var(--executive-accent) !important;
 }
 
 .btn-filter.active {
-    background-color: #0d6efd;
-    color: white;
-    border-color: #0d6efd;
-    box-shadow: 0 2px 4px rgba(13, 110, 253, 0.3);
+    background-color: var(--executive-accent) !important;
+    border-color: var(--executive-accent) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2) !important;
 }
 
-.clear-filter {
-    color: #6c757d;
-    text-decoration: none;
-    transition: color 0.2s;
+/* 8. STICKY COLUMNS - Integrated style */
+.sticky-col-1,
+.sticky-col-2,
+.sticky-col-3 {
+    position: sticky !important;
+    left: 0;
+    z-index: 5 !important;
+    background-color: inherit !important;
+    border-right: 1px solid var(--executive-border) !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.clear-filter:hover {
-    color: #dc3545;
+.sticky-col-1 {
+    width: 80px !important;
+    min-width: 80px !important;
+    max-width: 80px !important;
 }
 
-#tbl-resumen-calidad thead th {
-    background-color: #0d6efd;
-    color: white;
-    border-color: #0d6efd;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    vertical-align: middle;
+#tbl-promedio-af .sticky-col-1 {
+    width: 150px !important;
+    min-width: 150px !important;
+    max-width: 150px !important;
 }
 
-/* Tabs Styles */
-.nav-tabs .nav-link {
-    color: #6c757d;
-    background-color: #f8f9fa;
-    border: none;
-    transition: all 0.3s ease;
+.sticky-col-2 {
+    left: 80px !important;
+    width: 100px !important;
+    min-width: 100px !important;
+    max-width: 100px !important;
 }
 
-.nav-tabs .nav-link:hover {
-    background-color: #e9ecef;
-    color: #0d6efd;
+.sticky-col-3 {
+    left: 180px !important;
+    width: 120px !important;
+    min-width: 120px !important;
+    max-width: 120px !important;
 }
 
-.nav-tabs .nav-link.active {
-    background-color: #0d6efd !important;
-    color: white !important;
+#header-days th.sticky-col-1,
+#header-metrics th.sticky-col-1,
+#tbl-precio-zona thead th.sticky-col-1,
+#tbl-precio-zona thead th.sticky-col-2,
+#tbl-precio-zona thead th.sticky-col-3,
+#tbl-promedio-ih thead th.sticky-col-1,
+#tbl-promedio-ih thead th.sticky-col-2,
+#tbl-promedio-ih-anual thead th.sticky-col-1,
+#tbl-promedio-is thead th.sticky-col-1,
+#tbl-promedio-is thead th.sticky-col-2,
+#tbl-promedio-is-anual thead th.sticky-col-1,
+#tbl-promedio-iv thead th.sticky-col-1,
+#tbl-promedio-iv thead th.sticky-col-2,
+#tbl-promedio-iv-anual thead th.sticky-col-1,
+#tbl-promedio-af thead th.sticky-col-1 {
+    background-color: var(--executive-header-bg) !important;
+    z-index: 10 !important;
 }
 
-.tab-content {
-    animation: fadeIn 0.4s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.table th {
-    text-transform: uppercase;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-}
-
-.bg-light-blue {
-    background-color: #f0f7ff !important;
-}
-
-.centro-group:hover,
-.variedad-group:hover {
-    background-color: #f0f7ff !important;
+/* 9. UTILS & CARDS */
+.card {
+    border: 1px solid var(--executive-border) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
 }
 
 .exp-icon {
-    font-size: 1.2rem;
-    transition: transform 0.3s;
+    font-size: 14px !important;
+    color: var(--executive-text-muted) !important;
+    vertical-align: middle;
 }
 
-.calidad-row td {
-    font-size: 0.9rem;
+.badge.bg-light {
+    font-size: 9px !important;
+    letter-spacing: 0.05em;
+    padding: 4px 8px !important;
 }
 
-#tbl-resumen-calidad tfoot {
-    background-color: #f1f5f9;
-    border-top: 2px solid #0d6efd;
+/* Scrollbar for better experience */
+.table-responsive::-webkit-scrollbar {
+    height: 8px;
 }
 
-/* Custom scrollbar for filter boxes */
-.filter-buttons {
-    max-height: 80px;
-    overflow-y: auto;
+.table-responsive::-webkit-scrollbar-track {
+    background: #f1f5f9;
 }
 
-.filter-buttons::-webkit-scrollbar {
-    width: 4px;
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
 }
 
-.filter-buttons::-webkit-scrollbar-track {
-    background: #f1f1f1;
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
 }
 
-.filter-buttons::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 10px;
+/* 10. INTERACTIVITY */
+.dbl-click-export {
+    cursor: pointer !important;
+    position: relative;
+    transition: all 0.2s ease;
 }
 
-.filter-buttons::-webkit-scrollbar-thumb:hover {
-    background: #999;
+.dbl-click-export:hover {
+    background-color: rgba(59, 130, 246, 0.08) !important;
+    color: var(--executive-blue) !important;
+    box-shadow: inset 0 0 0 1px var(--executive-blue);
+}
+
+.export-hint {
+    font-size: 0.75rem;
+    color: var(--executive-text-muted);
+    font-style: italic;
+    display: inline-flex;
+    align-items: center;
 }

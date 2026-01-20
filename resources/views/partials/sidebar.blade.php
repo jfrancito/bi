@@ -51,7 +51,7 @@
 				</li>
 			@endforeach
 			<li class="menu-item">
-				<a href="/cerrarsession" class="menu-link logout">
+				<a href="{{ url('cerrarsession') }}" class="menu-link logout">
 					<span class="material-symbols-outlined menu-icon">logout</span>
 					<span class="title">Salir</span>
 				</a>

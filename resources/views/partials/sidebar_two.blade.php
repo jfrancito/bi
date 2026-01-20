@@ -940,7 +940,7 @@
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="/cerrarsession" class="menu-link">
+                        <a href="{{ url('cerrarsession') }}" class="menu-link">
                             Log Out
                         </a>
                     </li>
